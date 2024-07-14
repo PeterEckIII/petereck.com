@@ -1,7 +1,5 @@
 ---
 import BaseLayout from "../layouts/Base.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/global.css";
 import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
@@ -9,21 +7,14 @@ import { getCollection } from "astro:content";
 const allPosts = await getCollection("posts");
 
 const pageTitle = "Blog";
-const primaryColor = "hsl(238, 85%, 55%)";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <u>
+  <ul>
     {
       allPosts.map((post) => (
         <BlogPost url={`/posts/${post.slug}`} title={post.data.title} />
       ))
     }
-  </u>
+  </ul>
 </BaseLayout>
-
-<style define:vars={{ primaryColor }}>
-  li a {
-    color: var(--primaryColor);
-  }
-</style>

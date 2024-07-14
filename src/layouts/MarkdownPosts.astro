@@ -4,8 +4,8 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title}>
-  <p><em>{frontmatter.description}</em></p>
-  <p>Written by {frontmatter.author}</p>
+  <p class="description"><em>{frontmatter.description}</em></p>
+  <p class="author">Written by {frontmatter.author}</p>
   <img src={frontmatter.image.url} width="500" alt={frontmatter.image.alt} />
   <div class="tags">
     {
@@ -17,7 +17,9 @@ const { frontmatter } = Astro.props;
     }
   </div>
   <slot />
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
+  <p class="pubDate">
+    Published on: {frontmatter.pubDate.toString().slice(0, 10)}
+  </p>
 </Base>
 <style>
   a {
@@ -38,5 +40,17 @@ const { frontmatter } = Astro.props;
     padding: 0.5em 1em;
     font-size: 1.15em;
     color: #f8fcfd;
+  }
+
+  .tag a {
+    color: #f8fcfd;
+  }
+  .pubDate {
+    margin-top: 2rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+    margin-top: -1rem;
   }
 </style>
