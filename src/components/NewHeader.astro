@@ -1,0 +1,162 @@
+---
+
+---
+
+<header>
+  <a class="logo" href="/">PE</a>
+  <input type="checkbox" class="side-menu" id="side-menu" />
+  <label for="side-menu" class="hamburger">
+    <span class="hamburger-line"></span>
+  </label>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tags/">Tags</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+  :root {
+    --main-bg-color: #f1f5f9;
+    --primary: #2d3250;
+    --secondary: #424769;
+    --tertiary: #7077a1;
+    --contrast: #f6b17a;
+    --font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  header {
+    background-color: var(--primary);
+    border-bottom: 1px solid var(--contrast);
+    top: 100px;
+    width: 100%;
+  }
+
+  .logo {
+    display: inline-block;
+    color: var(--contrast);
+    font-size: 3rem;
+    margin-left: 1.25rem;
+  }
+
+  nav {
+    width: 90%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--secondary);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--main-bg-color);
+  }
+
+  ul a:hover {
+    background-color: var(--tertiary);
+  }
+
+  .hamburger {
+    cursor: pointer;
+    color: var(--contrast);
+    float: right;
+    padding: 40px 20px;
+  }
+
+  .hamburger-line {
+    line-height: 2.5;
+    background: var(--contrast);
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 30px;
+  }
+
+  .hamburger-line::before,
+  .hamburger-line::after {
+    background: var(--contrast);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+  }
+
+  .hamburger-line::before {
+    top: 5px;
+  }
+
+  .hamburger-line::after {
+    top: -5px;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
+  .side-menu:checked ~ nav {
+    max-height: 100%;
+  }
+
+  .side-menu:checked ~ .hamburger .hamburger-line {
+    background: transparent;
+  }
+
+  .side-menu:checked ~ .hamburger .hamburger-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .side-menu:checked ~ .hamburger .hamburger-line::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  body:has(.side-menu:checked) {
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 768px) {
+    nav {
+      max-height: none;
+      top: 10px;
+      position: relative;
+      float: right;
+      width: fit-content;
+      background-color: transparent;
+    }
+
+    ul li {
+      float: left;
+    }
+
+    ul a:hover {
+      background-color: var(--secondary);
+      color: var(--main-bg-color);
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+</style>

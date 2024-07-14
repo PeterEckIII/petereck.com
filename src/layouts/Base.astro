@@ -3,6 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import NewHeader from "../components/NewHeader.astro";
 
 const { pageTitle } = Astro.props;
 ---
@@ -17,7 +18,7 @@ const { pageTitle } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <Header />
+    <NewHeader />
     <h1>{pageTitle}</h1>
     <slot />
     <Footer />
