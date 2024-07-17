@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 <Base pageTitle={frontmatter.title}>
   <p class="description"><em>{frontmatter.description}</em></p>
   <p class="author">Written by {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="500" alt={frontmatter.image.alt} />
+  <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
   <div class="tags">
     {
       frontmatter.tags.map((tag: string) => (
@@ -22,6 +22,10 @@ const { frontmatter } = Astro.props;
   </p>
 </Base>
 <style>
+  img {
+    max-width: 400px;
+  }
+
   a {
     color: #f1f1f1;
   }
@@ -47,6 +51,10 @@ const { frontmatter } = Astro.props;
   }
   .pubDate {
     margin-top: 2rem;
+  }
+
+  .author {
+    margin-bottom: 1rem;
   }
 
   .description {

@@ -5,5 +5,124 @@ const pageTitle = "Home";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>Welcome to my website!</p>
+  <p class="hi">Hi there!</p>
+  <div class="container">
+    <div class="right-div">
+      <img src="/hero.jpeg" alt="Peter Eck" />
+    </div>
+    <div class="left-div">
+      <p class="intro">
+        I'm Peter Eck, an aspiring software engineer interested in all things
+        web
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="my-journey">
+      <p class="hi">My Journey</p>
+      <p class="intro">
+        In 2014 I graduated from <a href="https://www.marquette.edu/"
+          >Marquette University</a
+        >
+        with two majors in Marketing and Economics. After working in account management
+        for a handful of years I realized it wasn&apos;t for me.
+      </p>
+      <br />
+      <p class="next">
+        I taught myself Python and SQL so I could better analyze data for the
+        accounts I managed, and so I could eventually move to a data analysis
+        position.
+      </p>
+      <br />
+      <p class="after">
+        But after a JavaScript course on Udemy I realized building web apps was
+        what I really wanted to do. Seven years later and countless nights and
+        weekends spent learning, I&apos;m still at it and loving it every bit as
+        much.
+      </p>
+    </div>
+    <div class="about-me">
+      <p class="hi">About Me</p>
+      <img
+        src="/katie_wedding.jpeg"
+        alt="Peter and his wife, Katie Eck, standing together next to a fireplace with Christmas ornaments and a Christmas tree in the background."
+      />
+      <p class="intro">
+        I&apos;m a self-taught software engineer with a passion for building web
+        applications. I&apos;m currently working as a Senior Technical Support
+        Analyst at <a href="https://www.gohealth.com/">GoHealth</a>.
+      </p>
+      <br />
+      <p class="next">
+        I&apos;m always looking for new opportunities to learn and grow as a
+        developer. I&apos;m familiar with React (using Typescript!), the Nodejs
+        ecosystem, and I&apos;m currently learning more about the CICD process.
+      </p>
+      <br />
+      <p class="after">
+        When I&apos;m not coding you can find me watching, playing, or reading
+        about soccer. I&apos;m a huge <a href="https://www.realmadrid.com/"
+          >Real Madrid</a
+        >
+        fan and hope to someday follow the team around Europe for a season. I also
+        love my alma mater Marquette and our Golden Eagles basketball team. I am
+        a voracious reader, a whiskey collector, and a husband and dog dad to a loving
+        pittie/boxer mix named Mila (dog tax below)
+      </p>
+      <img
+        src="/mila.jpeg"
+        alt="Peter carrying Mila on the beach on a hot, summer day. Mila is smiling without a care in the world."
+      />
+    </div>
+    <div class="call-to-action">
+      If you&apos;d like to get in touch please feel free to reach out to me
+      using the links at the bottom of the page.
+    </div>
+  </div>
 </BaseLayout>
+<style>
+  .container {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+  a {
+    color: #7077a1;
+  }
+
+  .hi {
+    margin-top: 3rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: hsl(27, 87%, 72%);
+  }
+
+  .intro {
+    font-size: 1.5rem;
+    color: hsl(27, 87%, 80%);
+  }
+
+  .next {
+    font-size: 1.5rem;
+    color: hsl(27, 87%, 80%);
+  }
+
+  .after {
+    font-size: 1.5rem;
+    color: hsl(27, 87%, 80%);
+  }
+
+  .call-to-action {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+    color: hsl(27, 87%, 80%);
+  }
+</style>
